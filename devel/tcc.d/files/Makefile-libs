@@ -1,0 +1,21 @@
+.POSIX:
+
+OBJECTS = \
+	libtcc1.o \
+	alloca.o \
+	alloca-bt.o \
+	tcov.o \
+	stdatomic.o \
+	va_list.o \
+	dsohandle.o
+
+CFLAGS = -B.. -I..
+
+libtcc1.a: $(OBJECTS)
+	$(AR) rcs $@ $(OBJECTS)
+
+.SUFFIXES: .S
+
+.S.o:
+	$(CC) $(CFLAGS) -o $@ -c $>
+
