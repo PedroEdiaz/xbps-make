@@ -1,0 +1,38 @@
+xbps-make: xbps Makefiles repository
+====================================
+This is a repository of posix Makefiles used to build diferent xbps 
+packages with one simple generic command and minimum dependecies.
+Easy to hack if you don't use xbps, or any other dependecie.
+
+Usage:
+	$ make devel/tcc.src       (download source)
+	$ make devel/tcc.xbps      (build and make package)
+
+Options:
+	MAN=no                     (Do not install manuals)
+	POSIX=no                   (Do not install complice)
+	BUILDDIR=path              (compile .src on path)
+	CACHEDIR=path              (save .src on path)
+	XBPSDIR=path               (save .xbps on path)
+
+Dependecies:
+	* xbps
+	* make
+	* tar
+	* gzip
+	_ curl
+	_ git
+	_ sha256
+	_ sed
+	_ find
+	_ xargs
+
+Warning:
+	* This proyect it's used with bmake, other posix make programs
+	haven't been tested, but it should work, feel free to adapt it
+	if needed.
+	* GNU make doesn't work because the "include" command work 
+	diferent than posix make "include" command.
+
+Licence:
+	0BSD - Zero Clause BSD Licence
