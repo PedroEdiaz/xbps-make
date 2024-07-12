@@ -4,7 +4,7 @@ package=neatvi
 pkgver=${version}_0
 description=A small vi/ex editor editing bidirectional UTF-8 text
 homepage=https://github.com/aligrudi/neatvi
-license=MIT
+license=ISC
 replaces=nvi
 
 alternatives=vi:/usr/bin/vi:neatvi ex:/usr/bin/ex:neatvi
