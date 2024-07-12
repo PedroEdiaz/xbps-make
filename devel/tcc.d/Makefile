@@ -3,13 +3,10 @@ version=79a8229fb5da15135ac0c54c2c696a8da8988b24
 package=tcc
 pkgver=${version}_0
 description=Tiny C compiler
-conflict=
 homepage=
 license=LGPL-2.1
-replace=
 
 alternatives=cc:/usr/bin/cc:tcc
-shlib-provides=
 shlib-requires=libc.so
 
 include ../../Makefile

@@ -3,15 +3,9 @@ version=0.9.2
 package=st
 pkgver=${version}_0
 description=st is a simple terminal implementation for X
-conflict=
-homepage=https://github.com/aligrudi/neatvi
-license=
-provides=
-replaces=
-dependecies=
+homepage=https://git.suckless.org/st
+license=MIT/X Consortium License
 
-alternatives=
-shlib-provies=
 shlib-requires=libc.so libXft.so.2
 
 include ../../Makefile

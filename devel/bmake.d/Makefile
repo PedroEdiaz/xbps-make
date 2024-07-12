@@ -3,13 +3,10 @@ version=20220726
 package=bmake
 pkgver=${version}_0
 description=BSD Make tool
-conflict=
 homepage=http://crufy.net/help/sjg/bmake.html
 license=BSD-3-Clause
-replace=
 
 alternatives=make:/usr/bin/make:bmake
-shlib-provides=
 shlib-requires=libc.so
 
 include ../../Makefile
