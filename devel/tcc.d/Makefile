@@ -2,9 +2,9 @@ version=79a8229fb5da15135ac0c54c2c696a8da8988b24
 
 package=tcc
 pkgver=${version}_0
-description=BSD Make tool
+description=Tiny C compiler
 conflict=
-homepage=Tiny C compiler
+homepage=
 license=LGPL-2.1
 replace=
 
