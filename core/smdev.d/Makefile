@@ -5,6 +5,8 @@ description=suckless mdev
 homepage=http://git.suckless.org/smdev
 license=MIT/X Consortium License
 
+shlib-requires=libc.so
+
 SOURCES = \
 	${package}
 

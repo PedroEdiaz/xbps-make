@@ -1,5 +1,4 @@
 version=0.9.2
-
 package=st
 pkgver=${version}_0
 description=st is a simple terminal implementation for X

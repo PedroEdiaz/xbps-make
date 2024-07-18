@@ -1,5 +1,4 @@
 version=2.29
-
 package=thttpd
 pkgver=${version}_0
 description=thttpd is a simple, small, portable, fast, and secure HTTP server.

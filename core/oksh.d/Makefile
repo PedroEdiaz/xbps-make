@@ -2,13 +2,10 @@ package=oksh
 version=7.1
 pkgver=${version}_0
 description=Portable OpenBSD ksh
-conflict=
 homepage=http://github.com/ibara/oksh
 license=BSD-3-Clause
-replace=
 
 alternatives=sh:/usr/bin/sh:oksh
-shlib-provides=
 shlib-requires=libc.so
 
 include ../../Makefile

@@ -1,5 +1,4 @@
 version=20220726
-
 package=bmake
 pkgver=${version}_0
 description=BSD Make tool
