@@ -2,7 +2,7 @@ package=sdhcp
 version=8455fd2d090bd9b227340c30c92c6aa13302c91a
 pkgver=${version}_0
 description=Suckless dhcp client
-homepage=http://git.2f30.org/sdhcp
+homepage=http://git.2f30.org/${package}
 license=MIT/X Consortium License
 
 shlib-requires=libc.so

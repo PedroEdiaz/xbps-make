@@ -2,7 +2,7 @@ version=16
 package=neatvi
 pkgver=${version}_0
 description=A small vi/ex editor editing bidirectional UTF-8 text
-homepage=https://github.com/aligrudi/neatvi
+homepage=https://github.com/aligrudi/${package}
 license=ISC
 replaces=nvi
 

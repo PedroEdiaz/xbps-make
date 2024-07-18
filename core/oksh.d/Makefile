@@ -2,7 +2,7 @@ package=oksh
 version=7.1
 pkgver=${version}_0
 description=Portable OpenBSD ksh
-homepage=http://github.com/ibara/oksh
+homepage=http://github.com/ibara/${package}
 license=BSD-3-Clause
 
 alternatives=sh:/usr/bin/sh:oksh
@@ -14,7 +14,7 @@ SOURCES = \
 	${package}-${version}.tar.gz
 
 ${package}-${version}.tar.gz:
-	${DOWNLOAD} https://github.com/ibara/oksh/archive/$@
+	${DOWNLOAD} ${homepage}/archive/$@
 	${SHA256} "244ac5fed6e22b5cb0e817e9825f8fe755d5d648ed925940e77a3725f5b763a4"
 
 prepare: ${SOURCES}

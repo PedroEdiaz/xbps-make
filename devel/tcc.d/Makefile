@@ -2,9 +2,8 @@ version=79a8229fb5da15135ac0c54c2c696a8da8988b24
 package=tcc
 pkgver=${version}_0
 description=Tiny C compiler
-homepage=
+homepage=https://repo.or.cz/w/tinycc.git
 license=LGPL-2.1
-
 alternatives=cc:/usr/bin/cc:tcc
 shlib-requires=libc.so
 

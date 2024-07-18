@@ -2,7 +2,7 @@ version=0.9.2
 package=st
 pkgver=${version}_0
 description=st is a simple terminal implementation for X
-homepage=https://git.suckless.org/st
+homepage=https://git.suckless.org/${package}
 license=MIT/X Consortium License
 
 shlib-requires=libc.so libXft.so.2

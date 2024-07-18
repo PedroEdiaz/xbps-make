@@ -2,7 +2,7 @@ version=2.29
 package=thttpd
 pkgver=${version}_0
 description=thttpd is a simple, small, portable, fast, and secure HTTP server.
-homepage=https://www.acme.com/software/thttpd
+homepage=https://www.acme.com/software/${package}
 license=BSD-2-Clause
 
 shlib-requires=libc.so 

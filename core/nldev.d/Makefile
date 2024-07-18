@@ -2,8 +2,10 @@ package=nldev
 version=0.4
 pkgver=${version}_0
 description=netlink device manager
-homepage=http://r-36.net/scm/nldev/log.html
+homepage=http://r-36.net/scm/${package}/log.html
 license=MIT/X Consorium License
+
+shlib-requires=libc.so
 
 SOURCES = \
 	${package}

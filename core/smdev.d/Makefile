@@ -2,7 +2,7 @@ package=smdev
 version=0.2.3
 pkgver=${version}_0
 description=suckless mdev
-homepage=http://git.suckless.org/smdev
+homepage=http://git.suckless.org/${package}
 license=MIT/X Consortium License
 
 shlib-requires=libc.so
