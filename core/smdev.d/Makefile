@@ -1,5 +1,5 @@
 package=smdev
-version=8d07540c417e3a31942028318197c89b640278d5
+version=0.2.3
 pkgver=${version}_0
 description=suckless mdev
 homepage=http://git.suckless.org/smdev
@@ -16,8 +16,8 @@ FILES = \
 include ../../Makefile
 
 ${package}:
-	export url=git://git.suckless.org pkg=$@ commit=${version} && ${GITCLONE}
-	${SHA256D} "72696381df1e5601a7d9b51f2af1e2df0fc4a33b7e06b8e62fe60c9cef180e19"
+	export url=git://git.suckless.org pkg=$@ commit=v${version} && ${GITCLONE}
+	${SHA256D} "2c29eea2bb3c7b39d094831353fd1a701f562d467b3b3bedd7ac625a315d7e8b"
 
 prepare: ${SOURCES}
 	mv    ${package}     build
