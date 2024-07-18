@@ -1,10 +1,13 @@
 // neatvi configuration file 
 
 #define MKFILE_MODE	0600
+#define ECMD ""
 
 static struct filetype {
 	char *ft;		// file type 
 	char *pat;		// file name pattern
+	char *def;
+	char *sec;
 } filetypes[] = {
 	{"sh", "\\.sh$"},				// shell script
 	{"c", "\\.(h|c)$"},				// C 

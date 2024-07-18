@@ -1,5 +1,4 @@
-version=3be48e27c9694d87c8c7ea5a7d7bcc58957daab9
-
+version=16
 package=neatvi
 pkgver=${version}_0
 description=A small vi/ex editor editing bidirectional UTF-8 text
@@ -21,7 +20,7 @@ FILES = \
 
 ${version}.tar.gz:
 	$(DOWNLOAD) ${homepage}/archive/$@
-	$(SHA256)   "7c2e5f17f97217a55f2be1834e20b937a8ddfeea83a598153ce05b005479c43b"
+	$(SHA256)   "7ceae3d6433d514c642e6a8bd1cd0fa2992095d64ff2e8a02a40ce90113d6e9f"
 
 prepare: ${SOURCES}
 	tar -zxf ${version}.tar.gz
