@@ -1,4 +1,6 @@
 # VARIABLES
+USER= `git config --get user.name`
+MAIL= `git config --get user.email`
 ARCH=x86_64-musl
 CACHEDIR = ${XDG_CACHE_HOME}/xbps-make
 BUILDDIR = ${XDG_RUNTIME_DIR}/xbps-make
@@ -27,11 +29,13 @@ help:
 ${CACHEDIR}/${package}.src: ${CACHEDIR}
 	test -d files && mkdir -p files && cp -R files ${BUILDDIR}/files || true
 	${MAKE} -C ${BUILDDIR} -f `pwd`/Makefile prepare
-	tar -z -cf $@ -C ${BUILDDIR}/build .
+	tar -z -cf $@ -C ${BUILDDIR}/build . 
 
 ${CACHEDIR}/${package}.xbps: ${CACHEDIR} ${BUILDDIR}/root
 	xbps-create \
 		-A ${ARCH} \
+		-B xbps-make_0 \
+		-m "${USER} <${MAIL}>" \
 		-n ${package}-${pkgver} \
 		-s "${description}" \
 		-C "${conflicts}" \
