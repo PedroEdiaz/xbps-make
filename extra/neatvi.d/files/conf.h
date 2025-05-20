@@ -10,15 +10,19 @@ static struct filetype {
 	char *sec;
 } filetypes[] = {
 	{"sh", "\\.sh$"},				// shell script
+	{"odin", "\\.odin$"},				// odin
+	{"go", "\\.go$"},				// go
+	{"zig", "\\.zig$"},				// zig
 	{"c", "\\.(h|c)$"},				// C 
-	{"roff", "\\.(t|aux|[1-9]|bib)$|tmac\\."},	// troff
+	{"roff", "\\.(ms|t|aux|[1-9]|bib)$|tmac\\."},	// troff
+	{"tex", "\\.tex$"},				// latex
 	{"msg", "(mutt|COMMIT)"},			// email
 	{"mk", "\\.(d|mk)$|[Mm]akefile$"},		// makefile
 	{"diff", "\\.(patch|diff)$"}			// diff
 };
 
-#define COMMENT 7 | SYN_IT
-#define STRING  9 | SYN_IT
+#define COMMENT 7 //| SYN_IT
+#define STRING  9 //| SYN_IT
 #define KEYWORD 4
 #define OTHER 3
 
@@ -39,12 +43,38 @@ static struct highlight {
 	{"c", {OTHER}, "[-+]?\\<(0[xX][0-9a-fA-F]+|0[bB][0-1]+|[0-9]+)\\>"},
 	{"c", {OTHER}, "'\\\\?.'" },
 
+	// go code
+	{"go", {COMMENT}, "//.*$"},
+	{"go", {STRING}, "\"[^\"]*\""},
+	{"go", {OTHER}, "[-+]?\\<(0[xX][0-9a-fA-F]+|0[bB][0-1]+|[0-9]+)\\>"},
+	{"go", {KEYWORD}, "\\<(func|package|import|if|return|switch|var|nil)\\>"},
+	{"go", {KEYWORD}, "\\<(type|struct|case|default|defer)\\>"},
+	{"go", {KEYWORD}, "\\<(string|byte|uint)\\>"},
+
+	// odin
+	{"odin", {COMMENT}, "//.*$"},
+	{"odin", {STRING}, "\"[^\"]*\""},
+	{"odin", {KEYWORD}, "\\<(return|for|in|struct|if|else|when|switch|break|do)\\>"},
+	{"odin", {KEYWORD}, "\\<(proc|cast|transmute|package|import|defer)\\>"},
+	{"odin", {KEYWORD}, "\\<(struct|string|union|dinstinct|typeid|any|rawptr|cstring|rune)\\>"},
+	{"odin", {OTHER}, "[-+]?\\<(0[xX][0-9a-fA-F]+|0[bB][0-1]+|[0-9]+)\\>"},
+	{"odin", {OTHER}, "[ui]\\<(8|16|32|64|128)//>"},
+	{"odin", {OTHER}, "[f]\\<(16|32|64)//>"},
+	//{"odin", {KEYWORD}, "\\<(quaternions\\<(64|128|256)\\>|complex\\<(32|64|228)\\>)\\>"},
+
 	// roff
-	{"roff", {SYN_BD | KEYWORD}, "^[%.][ \t]*[^ \t$]+" },
+	{"roff", {SYN_BD | KEYWORD}, "^[ \t]*\\.[^ \t$]+" },
 	{"roff", {OTHER}, "\\$[^$]+\\$"},
 	{"roff", {STRING}, "\\\\[\\]?[AbBCDhHlLNRsSvwxXZ]'[^']+'"},
 	{"roff", {OTHER}, "\\\\[\\]?[\\*fFgkmMnsVY]?[+-]?(\\[[^\\]+\\]|\\(..)"},
 	{"roff", {OTHER}, "\\\\[\\]?([a-zA-Z]+|\\$.)"},
+
+	{"tex", {COMMENT}, "%.*$" },
+	{"tex", {SYN_BD | KEYWORD}, "\\\\[a-zA_Z]+" },
+	{"tex", {SYN_BD | KEYWORD}, "\\\\." },
+	{"tex", {OTHER}, "\\{[^}]+\\}"},
+	{"tex", {OTHER}, "\\\\[[^\\]]+\\\\]"},
+	{"tex", {STRING}, "\\$[^$]+\\$"},
 
 	// mail
 	{"msg", {COMMENT}, "#.*$" },
@@ -53,9 +83,9 @@ static struct highlight {
 
 	// makefile 
 	{"mk", {COMMENT}, "#.*$"},
-	{"mk", {KEYWORD}, "^[^\t]+[^\t ]*="},
-	{"mk", {SYN_BD}, "^[^\t]+:"},
+	{"mk", {KEYWORD}, "^[^\t][^=]+="},
 	{"mk", {OTHER}, "\\$[\\{\\(][^ \t\\}\\)]+[\\}\\)]"},
+	{"mk", {SYN_BD}, "^[^\t][^:]+:"},
 	{"mk", {OTHER}, "\\$."},
 
 	// diff
