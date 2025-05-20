@@ -6,33 +6,22 @@ want a simple, scriptable interface to streamline package builds without
 complex tooling.
 
 Features:
-	- Minimal dependecies
+	- Minimal dependecies (coreutils, xbps, bmake, git, curl, sed, tar, gzip)
 	- Declarative build system
-	- Allow Hacking for other package managments
+	- Hackable for other package managments
 	- Rebuilds only when necessary
 
 Usage:
-	$ make devel/tcc.src       (download source)
-	$ make devel/tcc.xbps      (build and make package)
+	bmake devel/tcc.src   # download source
+	bmake devel/tcc.xbps  # build and make package
+	bmake clean           # clean build directory if failed
 
 Options:
 	MAN=no                     (Do not install manuals)
-	POSIX=no                   (Do not install complice)
+	POSIX=no                   (Do not install posix complice options)
 	BUILDDIR=path              (compile .src on path)
 	CACHEDIR=path              (save .src on path)
 	XBPSDIR=path               (save .xbps on path)
-
-Dependecies:
-	* XBPS
-	* Posix Make
-	* tar
-	* gzip
-	_ curl
-	_ git
-	_ sha256
-	_ sed
-	_ find
-	_ xargs
 
 Warning:
 	* This proyect it's used with bmake, other posix make programs
