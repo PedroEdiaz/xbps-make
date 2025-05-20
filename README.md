@@ -38,4 +38,3 @@ Feel free to use, modify, and share freely — no restrictions.
 
 ## Contributing
 Contributions are welcome! Feel free to submit issues or pull requests.
-For every issue please add a test
