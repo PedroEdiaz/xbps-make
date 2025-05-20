@@ -1,8 +1,15 @@
-xbps-make: xbps Makefiles repository
-====================================
-This is a repository of posix Makefiles used to build diferent xbps 
-packages with one simple generic command and minimum dependecies.
-Easy to hack if you don't use xbps, or any other dependecie.
+xbps-make: Minimal Package Builder for XBPS
+===========================================
+A lightweight, POSIX-compliant Makefile wrapper to automate building packages 
+for the XBPS package manager (used in Void Linux). Designed for developers who
+want a simple, scriptable interface to streamline package builds without 
+complex tooling.
+
+Features:
+	- Minimal dependecies
+	- Declarative build system
+	- Allow Hacking for other package managments
+	- Rebuilds only when necessary
 
 Usage:
 	$ make devel/tcc.src       (download source)
@@ -16,8 +23,8 @@ Options:
 	XBPSDIR=path               (save .xbps on path)
 
 Dependecies:
-	* xbps
-	* make
+	* XBPS
+	* Posix Make
 	* tar
 	* gzip
 	_ curl
