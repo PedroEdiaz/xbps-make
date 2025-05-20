@@ -1,4 +1,4 @@
-static char *font = "Source code pro:pixelsize=24:antialias=true:autohint=true";
+static char *font = "Source Code Pro, Source Code Pro Italics:pixelsize=24";
 static int borderpx = 10;
 
 static char *shell = "/bin/sh";
@@ -104,7 +104,7 @@ static unsigned int defaultattr = 11;
  * Note that if you want to use ShiftMask with selmasks, set this to an other
  * modifier, set to 0 to not use it.
  */
-static uint forcemousemod = ShiftMask;
+static uint forcemousemod = 0;//ShiftMask;
 
 /*
  * Internal mouse shortcuts.
